@@ -1,0 +1,110 @@
+Câu 1 
+
+<?php
+$n = readline("Nhập vào số nguyên n: ");
+echo "Giá trị tuyệt đối của $n là " . abs($n);
+?>
+
+Câu 2 
+
+<?php
+$a = readline("Nhập vào số nguyên dương a: ");
+$b = readline("Nhập vào số nguyên dương b: ");
+
+if ($a > 0 && $b > 0) {
+    $remainder = $a % $b;
+    echo "Kết quả chia lấy phần dư của $a cho $b là: $remainder";
+} else {
+    echo "Nhập vào 2 số nguyên dương.";
+}
+?>
+
+Câu 3 
+
+<?php
+$fahrenheit = readline("Nhập vào nhiệt độ Fahrenheit: ");
+$celsius = (5/9) * ($fahrenheit - 32);
+echo "Nhiệt độ Celsius tương đương là: $celsius";
+?>
+
+Câu 4 
+
+<?php
+$a = readline("Nhập hệ số a: ");
+$b = readline("Nhập hệ số b: ");
+if ($a != 0) {
+    $x = -$b / $a;
+    echo "Nghiệm của phương trình $a*x + $b = 0 là: x = $x";
+} else {
+    echo "Phương trình không phải là phương trình bậc I (a không được bằng 0).";
+}
+?>
+
+Câu 5
+
+<?php
+$a = readline("Nhập vào số nguyên a: ");
+$b = readline("Nhập vào số nguyên b: ");
+$c = readline("Nhập vào số nguyên c: ");
+$maxValue = max($a, $b, $c);
+echo "Giá trị lớn nhất là: $maxValue";
+?>
+
+
+Câu 6
+
+<?php
+$N = readline("Nhập vào số nguyên dương N có 2 chữ số: ");
+if (is_numeric($N) && $N >= 10 && $N <= 99) {
+    $tongChuSo = floor($N / 10) + $N % 10;
+    echo "Tổng các chữ số của $N là: $tongChuSo";
+} else {
+    echo "Vui lòng nhập số nguyên dương có 2 chữ số.";
+}
+?>
+
+Câu 7
+
+<?php
+$thoiGianGiay = readline("Nhập vào thời gian (giây): ");
+if (is_numeric($thoiGianGiay) && $thoiGianGiay >= 0) {
+    // Chuyển đổi thời gian từ giây sang giờ, phút, giây
+    $gio = floor($thoiGianGiay / 3600);
+    $phut = floor(($thoiGianGiay % 3600) / 60);
+    $giay = $thoiGianGiay % 60;
+    echo "Thời gian là: $gio giờ, $phut phút, $giay giây";
+} else {
+
+    echo "Vui lòng nhập số nguyên không âm.";
+}
+?>
+
+Câu 8
+<?php
+$N = intval(trim(fgets(STDIN)));
+
+echo $N;
+
+while ($N != 1) {
+    if ($N % 2 == 0) {
+        $N /= 2;
+    } else {
+     
+        $N = $N * 3 + 1;
+    }
+
+    echo " $N";
+}
+?>
+
+Câu 9 
+<?php
+$N = intval(trim(fgets(STDIN)));
+$numbers = array_map('intval', explode(' ', trim(fgets(STDIN))));
+$totalSum = ($N * ($N + 1)) / 2;
+$arraySum = array_sum($numbers);
+$missingNumber = $totalSum - $arraySum;
+echo $missingNumber;
+?>
+
+
